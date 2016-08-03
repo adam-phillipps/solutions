@@ -15,17 +15,22 @@ class WordCountTests(unittest.TestCase):
             start = time.time()
             event(param)
             finish = time.time()
-            print 'Time: ' + str(finish - start)
+            print '\nTime: ' + str(finish - start)
             return event
         return start_stop
 
-    # @stopwatch
+    @stopwatch
     def test_correct_return_type(self):
+        """
+        Assure the correct return type
+        """
         results = solutions.word_count('ping')
         self.assertIsInstance(results, dict)
 
-    # @stopwatch
+    @stopwatch
     def test_str_input(self):
+        """
+        """
         results = solutions.word_count('Test test this is a string test')
         expected = {
             'Test': 1,
@@ -37,7 +42,7 @@ class WordCountTests(unittest.TestCase):
         }
         self.assertEqual(expected, results)
 
-    # @stopwatch
+    @stopwatch
     def test_unicode_input(self):
         results = solutions.word_count(u'Test test this is a string test')
         expected = {
@@ -50,12 +55,12 @@ class WordCountTests(unittest.TestCase):
         }
         self.assertEqual(expected, results)
 
-    # @stopwatch
+    @stopwatch
     def test_file_input(self):
         result = solutions.word_count('tests/test_file')
         self.assertGreater(len(result), 0)
 
-    # @stopwatch
+    @stopwatch
     def test_empty_input(self):
         result = solutions.word_count('')
         self.assertIsNotNone(result)

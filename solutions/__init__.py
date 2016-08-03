@@ -20,17 +20,27 @@ def word_count(source):
     else:
         counter.update(Counter(str(source).split()))
     ex = {k: v for k, v in counter.iteritems()}
-    print ex
     return ex
 
 
 def condense_meeting_times(times):
     """
-    Return information about the continuous blocks of time meetings are
-    scheduled for.
+    This takes a list of times and returns an organized list with all
+    overlapping times ommited.
 
     return:
         list of tuples
     """
-    running_block = ()
-    return [(0,0)]
+    # Let python sort, most effeciently.  This yields an easy
+    # way to find overlapping time blocks
+    times.sort()
+    condensed_times = []
+    start_time, end_time = times[0]
+    for time_block in times:
+        if (end_time >= time_block[0]):
+            end_time = max(end_time, time_block[1])
+        else:
+            condensed_times.append((start_time, end_time))
+            start_time, end_time = time_block
+    condensed_times.append((start_time, end_time))
+    return condensed_times

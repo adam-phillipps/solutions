@@ -1,6 +1,5 @@
 from setuptools import setup
-from codecs import open
-from os import path
+
 
 setup(name='solutions',
       version='0.1',
@@ -11,10 +10,3 @@ setup(name='solutions',
       license='MIT',
       packages=['solutions'],
       zip_safe=False)
-
-
-here = path.abspath(path.dirname(__file__))
-
-# Get the long description from the README file
-with open(path.join(here, 'README.rst'), encoding='utf-8') as f:
-    long_description = f.read()

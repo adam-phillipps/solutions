@@ -21,8 +21,7 @@ def word_count(source):
                 counter.update(line.split())
     else:
         counter.update(Counter(str(source).split()))
-    ex = {k: v for k, v in counter.iteritems()}
-    return ex
+    return {k: v for k, v in counter.iteritems()}
 
 
 def condense_meeting_times(times):
@@ -32,7 +31,6 @@ def condense_meeting_times(times):
 
     parameters:
         list of (start_time, end_time) tuples
-
     return:
         list of tuples
     """

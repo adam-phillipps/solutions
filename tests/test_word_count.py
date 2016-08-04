@@ -3,6 +3,7 @@
 import unittest
 import solutions
 import time
+from os import path
 
 
 class WordCountTests(unittest.TestCase):
@@ -64,8 +65,9 @@ class WordCountTests(unittest.TestCase):
         """
         Assure the code can take file path inputs
         """
-        result = solutions.word_count('tests/test_file')
-        self.assertGreater(len(result), 0)
+        file = path.join(path.abspath(path.dirname(__file__)), 'test_file')
+        result = solutions.word_count(file)
+        self.assertGreater(len(result), 1)
 
     @stopwatch
     def test_empty_input(self):
@@ -74,6 +76,3 @@ class WordCountTests(unittest.TestCase):
         """
         result = solutions.word_count('')
         self.assertIsNotNone(result)
-
-if __name__ == '__main__':
-    unittest.main()

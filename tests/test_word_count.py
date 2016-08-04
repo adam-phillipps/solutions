@@ -30,6 +30,7 @@ class WordCountTests(unittest.TestCase):
     @stopwatch
     def test_str_input(self):
         """
+        Assure the function can take str inputs
         """
         results = solutions.word_count('Test test this is a string test')
         expected = {
@@ -44,6 +45,9 @@ class WordCountTests(unittest.TestCase):
 
     @stopwatch
     def test_unicode_input(self):
+        """
+        Assure the function can take unicode inputs
+        """
         results = solutions.word_count(u'Test test this is a string test')
         expected = {
             'Test': 1,
@@ -57,11 +61,17 @@ class WordCountTests(unittest.TestCase):
 
     @stopwatch
     def test_file_input(self):
+        """
+        Assure the code can take file path inputs
+        """
         result = solutions.word_count('tests/test_file')
         self.assertGreater(len(result), 0)
 
     @stopwatch
     def test_empty_input(self):
+        """
+        Assure the function can deal with an empty string input
+        """
         result = solutions.word_count('')
         self.assertIsNotNone(result)
 

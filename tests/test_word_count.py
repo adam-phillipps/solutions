@@ -33,7 +33,7 @@ class WordCountTests(unittest.TestCase):
         """
         Assure the function can take str inputs
         """
-        results = solutions.word_count('Test test this is a string test')
+        results = solutions.word_count('Test test this is a string test.')
         expected = {
             'Test': 1,
             'test': 2,
@@ -49,7 +49,7 @@ class WordCountTests(unittest.TestCase):
         """
         Assure the function can take unicode inputs
         """
-        results = solutions.word_count(u'Test test this is a string test')
+        results = solutions.word_count(u'Test test this is a string test.')
         expected = {
             'Test': 1,
             'test': 2,

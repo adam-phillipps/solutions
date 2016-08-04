@@ -3,24 +3,29 @@
 import os.path
 import codecs
 from collections import Counter
+import string
+from string import punctuation
 
 
 def word_count(source):
     """
-    Tally occurancs of a word.
+    Tally occurancs of a word, without punctuation.
 
     parameters:
         string that can be a path to a file
     return:
         <class 'collections.Counter'>
     """
+    punc = string.punctuation
     counter = Counter()
     if (os.path.isfile(source)):
         with codecs.open(source) as source_file:
             for line in source_file:
-                counter.update(line.split())
+                no_punc_line = [word.strip(punc) for word in line.split()]
+                counter.update(no_punc_line)
     else:
-        counter.update(Counter(str(source).split()))
+        no_punc_line = [word.strip(punc) for word in source.split()]
+        counter.update(Counter(no_punc_line))
     return {k: v for k, v in counter.iteritems()}
 
 

@@ -1,20 +1,20 @@
-================================================================================
-Readme for Adam Phillipps' attempt at python...It's called Solutions
-================================================================================
-github repo:
-  https://github.com/adam-phillipps/solutions
-pypi:
-  
-**This package provides 2 methods; One tallies words and one gives
-back the least amount of continuous time blocks that can be achieved
-with the given set.  The latter method is called ``condese_meetings()``.**
-*the methods will be explained below*
+Solutions Readme
+================
+===========
+Description
+===========
+This package provides a function to tally words in a given string or file and a function
+to remove overlapping times from a list of start and end times.
 
-1. Getting: 
-   ``git clone git@github.com:adam-phillipps/solutions.git``
-2. Running:
-* Run the code from the console by importing and calling like this:
-``>>> import solutions``
-``>>> solutions.word_count(input)``
-* Import it into your project 'cause yolo:
+===================
+Getting the package
+===================
+*There are two easy ways to obtaining the code...*
 
+- ``git clone git@github.com:adam-phillipps/solutions.git``
+- ``pip install solutions`` # This seems borked.  The package is on the test server, though.
+
+=================
+Using the package
+=================
+To use the methods, you will need to import the package.  At the top of your file or in the python console, add ``import solutions`` and to use the methods, ``solutions.word_count(file_path)`` or ``solutions.condense_meeting_times(times)``
